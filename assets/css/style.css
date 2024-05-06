@@ -1,0 +1,182 @@
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+.container-width{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+body{
+    font-family: "Merriweather", serif;
+    font-weight: 400; 
+    text-align : justify;
+}
+/* responsive */
+    @media(min-width:1019px)and(max-width:1140px){
+        .menu-logo{
+            margin-right: 20px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .grid1x2 {
+            grid-template-columns: 1fr;
+        }
+    }
+
+/* End Responsive */
+/*Header */
+header{
+    margin-top: 0rem;
+    padding: 0rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo{
+    width: 125px;
+}
+.logo > img {
+    width: 100%;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.menu-item{
+    display: flex;
+    gap: 1rem;
+    color: var(--color-light);
+}
+/* End Header*/
+/* Button */
+.read-btn{
+    background:linear-gradient(200deg, #22a3d6,#39e5d4);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-quote{
+    background-color: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+/* End Button */
+/* Slider Section */
+.slide-img > img{
+    width:100%; 
+}
+/* End of Slider section */
+
+/* Welcome section */
+.welcome-section{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.welcome-img > img{
+    width:100%;
+}
+.grid1x2{
+    
+}
+.welcome-title >p{
+    font-size: 15 !important;
+    line-height: 1.8 !important;
+}
+/* End of welcome Section */
+/* service section  */
+.service-section{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.service-section{
+    text-align: center; 
+}
+ .grid1x3{
+    gap : 0rem; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+ }
+ .service-section-detail{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.service-section-detail
+
+/* end of service section */
+
+/* Client Section */
+.client-section{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.client-slider{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.client-title-section{
+    text-align: center;
+}
+/* End of client section */
+/* quote section */
+.quote {
+    background:linear-gradient(#39b1e5, #22a3d6); ;
+}
+.text-title-detail {
+    color: #ffff;
+}
+.text-detail{
+    color: #ffff;
+}
+.quote-grid{
+    gap: 8em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.btn-quote{
+    margin-top:2rem; 
+}
+.text-detail-title{
+
+}
+/* end of quote section */
+
+/* Footer */
+.social{
+    padding: 2rem 2rem;
+    color: #ffff;
+}
+.quote{
+    margin-top: 1rem; 
+    padding: 2rem 2rem; 
+}
+footer{
+    background-color: #3491dd;
+}
+.social-network{
+    margin-left: 10rem;
+}
+/*End Footer */
+
+/* Compyright */
+.copy-right{
+    background-color: rgb(117, 117, 117);
+}
+.title-copy-right{
+    text-align: center;
+    color: #ffff;
+}
+/* End of Company right */
