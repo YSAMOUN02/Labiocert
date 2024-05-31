@@ -1,0 +1,1541 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+li{
+    list-style-type: none;
+}
+.container-width{
+    max-width: 1040px;
+    margin: 0 auto;
+}
+html, body{
+    position: relative;
+    height: 100%;
+}
+body{
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+/* responsive */
+    @media(min-width:1019px)and(max-width:1140px){
+        .menu-logo{
+            margin-right: 20px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .grid1x2 {
+            grid-template-columns: 1fr;
+        }
+    }
+
+/* End Responsive */
+/*Header */
+.navbar ul > li > a{
+    text-decoration: none;
+}
+.logo > a > img{
+    margin-right: 1rem;
+    width: 180px;
+}
+.main-nav{
+    font-family:"Roboto Slab", serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95); 
+    position: fixed !important;
+    top: 0; 
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 9;
+    transform: translate3d(0px, 0px, 0px);
+    cursor: pointer;
+}
+nav .shrink{
+    top: -60px;
+    background-color: #3c3838;
+}
+nav{
+    padding: 0.5rem 0rem;
+}
+nav ul{
+    display: flex;
+    top: 0;
+    margin: 0;
+}
+ul > li > a{
+    gap: 2rem;
+}
+nav > ul > li{
+    margin-left: 0rem;
+    font-weight: bold;
+    text-align: center;
+}
+.submenu > li > a {
+    text-align: left;
+}
+.menu-item{
+    padding: 0.5rem 1rem;
+    color: #000000;
+    position: relative; 
+}
+.menu-item:before{
+    content: "";
+    height: 4px;
+    position: absolute;
+    background-color: #0d50ba;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 30px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.menu-item:hover:before{
+    transform : scaleX(1);
+}
+.submenu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width:250px;
+    padding: 0;
+    background-color: #ffffff;
+    color: #100f0f;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.8); 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+    text-align: left;
+}
+.submenu > li > a{
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+}
+.menu-item:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    top: 60px;
+    transform: translateY(1px);
+    animation: slide_down 0.5s forwards;
+}
+.submenu li{
+    padding: 10px;
+    transition: all 1s ;
+}
+.submenu li:hover{
+    background-color: #2969ff;
+    color: black;
+    cursor: pointer;
+}
+.sub-media{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #100f0f;
+    background-color: rgb(253, 253, 253);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.8); 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+    text-align: left;
+    &:hover {
+        box-shadow: 0 0 .35rem 0 rgba(0,0,0,.5);
+            position: absolute;
+            > li {
+                display: block;     
+        }
+    }
+}
+    .menu-item:hover .sub-media{
+        visibility: visible;
+        opacity: 1;
+        top: 70px;
+        transform: translateY(1px);
+        animation: slide_down 0.5s forwards;
+    }
+    .sub-media li:hover .rowmenu{
+        color: black;
+        cursor: pointer;   
+    }
+    .sub-media > li > a {
+        text-decoration: none;
+    }
+    .allmenu,
+    .events,
+    .news{
+    gap: 1rem;
+    display: flex;
+    }
+    .rowmenu{
+        display: flex;
+        gap: 1rem;
+        border-color: #bbb;
+        /* flex-direction: row-reverse;
+        justify-content: center; */
+    }
+    .allmenu{
+        h3{
+            width: 12rem;
+            margin: 0;
+            padding: .65rem .75rem;
+            position: relative;
+            z-index: 10;
+            font-size: .875rem;
+            font-weight: normal;
+            cursor: default;
+        }
+        &:hover {
+            h3 {
+                width: calc(12rem + 1px);
+                background-color:#3491dd;
+            }
+            div {
+                display:block;
+            }
+        }
+        div {
+            display: none;
+            padding: 1rem 1.2rem;
+            border-left: 1px solid #bbb;
+            border-radius: 0 .2rem .2rem 0;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 12rem;
+            z-index: 99;
+        }
+    }
+
+/* Switch Language */
+.menu-language{
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+
+#english{
+    display: none;
+}
+
+/* Search bar */
+.search-container{
+    position: relative; 
+    display: inline-block;
+
+}
+.search-icon{
+    cursor: pointer;
+    font-size: 18px; 
+}
+.search-box{
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    border: 1px solid #00b3ff;
+    padding: 10px;
+    background: white;
+    z-index: 1000;
+    width: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+.search-box input{
+    width: calc(120% - 50%);
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 2px;
+}
+.search-box button{
+    padding: 5px 15px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+.search-box button:hover{
+    background: #555;
+}
+.search-suggestions{
+    margin-top: 10px; 
+    list-style: none;
+    padding: 0;
+    display: block;
+}
+.search-suggestions li a{
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+.search-suggestions li:hover{
+    background: #f0f0f0;
+}
+.show{
+    display:block;
+    opacity: 1;
+    transform: translateY(0);
+}
+.nav-post1, .nav-post2, .nav-post3 {
+    display: none;
+}
+
+.header .menu .ul-parent .li-show:hover .nav-post1 {
+    display: block;
+}
+
+/* End Header*/
+/* Button */
+.read-btn{
+    background:linear-gradient(200deg, #22a3d6,#39e5d4);
+}
+.style-bt{    
+    display: inline-block;
+    border: none;
+    color: rgb(252, 252, 252);
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    user-select: none;
+    background-color: transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.4s ease 0s; 
+    border: 1px solid transparent;
+    border-radius: 100px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.style-bt::after{
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      transform: scale(0);
+      transition: transform 0.5s ease;
+}
+.style-bt:hover::after{
+    transform: scale(4);
+}
+.style-bt:hover{
+    background: #39e5d4;
+}
+.btn-quote{
+    background-color: rgba(0, 0, 0, 0.15);
+    display:inline-block;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-quote::after{
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      transform: scale(0);
+      transition: transform 0.5s ease;
+}
+.btn-quote:hover::after{
+    transform: scale(4);
+}
+.btn-quote:hover{
+    border-color: #666666;
+    background: #01090e;
+
+}
+.btn-pharma{
+    margin-top: 3.5rem;
+    margin-bottom: 0rem; 
+}
+.btn-food{
+    margin-top: 3.5rem;
+    margin-bottom: 0rem;
+}
+.btn-water{
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+}
+/* service one btn */
+.serive-onebtn{
+    display: flex;
+    gap: 1rem;
+}
+
+.serviceone-btn{
+    background-color: rgba(77, 178, 236, 0.99);
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 100px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: center;
+}
+.btn1  > span {
+    font-size: 12px;
+}
+.serviceone-btn::after{
+    background: radial-gradient(
+        circle,
+        rgb(12, 126, 219) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      transform: scale(0);
+      transition: transform 0.5s ease;
+}
+.serviceone-btn:hover::after{
+    transform: scale(4);
+}
+.serviceone-btn:hover{
+    border-color: #666666;
+    background: #01090e;
+
+}
+.parameter-btn{
+    background-color: rgba(77, 178, 236, 0.99);
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 100px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: center;
+}
+.parameter-btn::after{
+    background: radial-gradient(
+        circle,
+        rgb(12, 126, 219) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      transform: scale(0);
+      transition: transform 0.5s ease;
+}
+.parameter-btn:hover::after{
+    transform: scale(4);
+}
+.parameter-btn:hover{
+    border-color: #666666;
+    background: #01090e;
+
+}
+
+/* end of service one btn */
+
+/* End Button */
+/* Slider Section */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: hsl(0, 0%, 100%);
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+swiper-container {
+  width: 100%;
+  height: 70%;
+  margin-top: 5.2rem;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-pagination-progressbar 
+.swiper-pagination-progressbar-fill {
+    background: rgb(255, 0, 0);
+    position: absolute;
+    left: 0px;
+}
+/* End of Slider section */
+
+/* Welcome section */
+.welcome-section{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+    font-family:"Roboto Slab", serif;
+}
+.welcome-img > img{
+    display: block;
+    width: 85%;
+    height: 55%;
+    object-fit: cover;
+    margin-top: 2.5rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+}
+.grid1x2{
+    gap: 0rem; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+}
+.welcome-title-section > h1{
+    font-size: 23px !important;
+    font-weight: 700 !important;
+}
+.welcome-title
+{
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+    font-size: 15px !important;
+    letter-spacing: 1px;
+   text-align: justify;
+   word-spacing: -1px; 
+   line-height: 1.4;
+    
+}
+.readmore-btn{
+    margin-top: 1rem;
+}
+/* End of welcome Section */
+/* service section  */
+.service-section{ 
+    margin-top: 5rem;
+    padding: 2rem 2rem;
+    font-family:"Roboto Slab", serif;
+}
+.service-title-section{
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+}
+.service-title-section > h1{
+    font-size: 25px;
+}
+.service-section{
+    text-align: center; 
+}
+.fa-flask-vial,
+.fa-mortar-pestle,
+.water-icon{
+    color: #22a3d6;
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+ .grid1x3{
+    gap : 1rem; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+ }
+ .pharma-test,
+ .food-test{
+    margin-top: 1rem;
+  
+}
+.water-test{
+    margin-top: 1rem;
+}
+
+.pharma-title-service > h3{
+    font-size: 18px;
+}
+.food-title-service > h3{
+    font-size: 18px;
+}
+.water-title-service > h3{
+    font-size: 18px;
+}
+/* end of service section */
+
+/* Client Section */
+.client-section{
+    font-family:"Roboto Slab", serif;
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.client-slider{
+    margin-top: 1rem;
+    padding: 2rem 2rem;
+}
+.client-title-section{
+    text-align: center;
+    box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.1);
+}
+.client-title-section > h3{
+    font-size: 25px;
+}
+.service-section-detil{
+    margin-top: 5rem;
+}
+.swiper{
+    margin-top: 6rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.swiper-slide{
+    font-size: 18px; 
+    background:#ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer !important;
+}
+.button-next, 
+.button-prev {
+    width: 25px;
+    height: 25px;
+    z-index: 9;
+    border-radius: 20px !important;
+    background-color: #666666;;
+    color: #fff;
+    cursor: pointer !important;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    
+}
+.swiper-button{
+    display: flex;
+}
+.nextt-btn{
+    width: 50%;
+}
+.nextt-btn{
+    text-align: left;
+}
+.prevv-btn{
+    margin-left: 30rem;
+    margin-right: 0rem;
+}
+/* 
+
+.button-nextt{
+    right: 0;
+    margin-right: 60rem;
+    margin-left: 0rem;
+}
+.button-prevv{
+    margin-left: 2rem;
+    
+    left: 0;
+} */
+
+@media (max-width: 760px) {
+    .swiper-button-next {
+        right: 20px;
+        transform: rotate(90deg);
+    }
+    .swiper-button-prev {
+        left: 20px;
+        transform: rotate(90deg);
+    }
+}
+@media(max-width: 760px){
+    .swiper-button-next{
+        right: 20px;
+        transform: rotate(90deg);
+    }
+    .swiper-button-prev {
+        left: 20px;
+        transform: rotate(90deg);
+      }
+    }
+/* End of client section */
+/* quote section */
+.quote-section{
+    margin-top: 0rem;
+}
+.quote {
+    background:linear-gradient(#31c9ba,#22a3d6); ;
+}
+.fa-pen-to-square{
+    margin-top: 0.5rem; 
+    margin-right: 1rem;
+    font-size: 25px;
+    color: #ffff;
+}
+.text-title > h2 > p{
+    margin-right:5rem; 
+}
+.text-title-detail {
+    color: #ffff;
+}
+.text-detail{
+    color: #ffff;
+}
+.quote-grid{
+    gap: 1rem;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+}
+.btn-quote{
+    margin-right:4rem; 
+    margin-top: 2rem;
+    width: 100%;
+}
+.text-detail-title{
+
+}
+
+/* end of quote section */
+/* Our service */
+.services-title > h1{
+    font-size: 30px;
+}
+    .ourservices{
+        font-family:"Roboto Slab", serif;
+        margin-top: 10rem;
+        text-align: center;
+    }
+    .grid-service{
+        display: flex;
+        margin: 3rem 0rem 5rem 3rem;
+        gap: 5rem;
+    }
+    .serviceone-title > a > h4{
+        color: black;
+        text-align: left;
+        margin-top: 2rem;
+    }
+    .serviceone-title > a:hover h4{
+        color: #00b3ff;
+    }
+/* End of our service */
+/* Pharmticacual */
+.one-service{
+    font-family:"Roboto Slab", serif;
+}
+.grid-serviceone{
+    display: flex;
+    gap: 5rem;
+}
+.service-one00 > img{
+    width: 750px; 
+    height: 500px;
+}
+.pharma-title,
+.food-section,
+.water{
+    width: 60%;
+}
+.pharma-title > h1{
+    margin-top: 7rem;
+    font-size: 25px;
+    text-align: left;
+    font-weight: 400;
+}
+.pharma-title > p{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.coveragetest-text >li{
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 2;
+}
+.coverage-test{
+    display: flex;
+    gap: 0.2rem;
+}
+.coveragetest-image > img{
+    margin-top: 3rem;
+  margin-right: 0rem;
+}
+.consult-text{
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+}
+.coreverage-textdetail > h5{
+    text-align: left;
+}
+.microbiological{
+    display: flex;
+}
+.microbiological-text>li{
+    list-style-type: circle;
+    list-style-position: outside;
+}
+.microbiological-img > img{
+    justify-items: left;
+    margin-top: 3rem;
+  margin-right: 0rem;
+}
+.physico{
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.physico-text > li{
+    list-style-type: circle;
+    text-indent: 2em;
+    line-height: 2;
+}
+.physico-detail{
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+.serive-onebtn{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+/* End pof pharnarticacual */
+/* aversting */
+.adversting{
+    margin-top: 6.5rem;
+}
+.lastnew{
+    background-color:rgba(77, 178, 236, 0.99);
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+.img-lastnew> img{
+    width: 100px;
+    height: 70px;
+}
+.img-khmernew,
+.img-launchnew,
+.img-kinal{
+    margin-top: 1.5rem;
+    gap: 1rem;
+    display: flex;
+   
+}
+.text-lastnew:hover {
+    text-decoration: none;
+}
+.lastnew-detail{
+    margin-top: 3rem;
+    gap: 3rem;
+    display: block;
+}
+.scrollable{
+    overflow-y: scroll; 
+    height: 100%;
+    overflow: hidden;
+}
+.fixed{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+/* End of adversting */
+/* Food  */
+.two-service{
+    font-family:"Roboto Slab", serif;
+}
+.gridservice-two{
+    display: flex;
+    gap: 5rem;
+}
+.food-title > h1{
+    margin-top: 7rem;
+    font-size: 25px;
+    text-align: left;
+    font-weight: 400;
+}
+.food-title{
+    text-align: left;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+.food-image > img{
+    margin-top: 2rem;
+    width: 700px;
+    height: 400px;
+}
+.coverage{
+    display: flex;
+    gap: 2rem;
+}
+.coverage-text > li{
+    list-style-type: circle;
+    line-height: 1.6;
+}
+.labortory-text{
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+.physico-detail {
+    margin-top: 1rem;
+
+}
+.labortory-text,
+.physico-detail > p{
+    text-align: justify;
+}
+/* End of food */
+
+/* water */
+.service-three{
+    font-family:"Roboto Slab", serif;
+}
+.gridservice-three{
+    display: flex;
+    gap: 5rem;
+}
+.water-title > h1{
+    margin-top: 7rem;
+    font-size: 25px;
+    text-align: left;
+    font-weight: 400;
+}
+.water-detial > img{
+    margin-top: 2rem;
+    width: 700px;
+    height: 400px;
+}
+.waterdetail-text{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.water-physico{
+    display: flex;
+}
+
+.waterphysico-text{
+    margin-left: 2rem;
+}
+.waterphysico-text > li{
+    list-style-type: circle;
+}
+.waterphysico-text > h5 {
+    font-size: 18px;
+}
+
+/* End of water */
+/* End of our  */
+/* Welcome page */
+    .welcomepage{
+        font-family:"Roboto Slab", serif;
+    }
+    .grid-welcome{
+        display: flex;
+        gap: 5rem;
+    }
+    .team-text{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        line-height: 2;
+    }
+    .welcome-title > p{
+        margin-top: 3rem;
+    }
+    .welcome-title > h1{
+        margin-top: 7rem;
+        font-size: 25px;
+        text-align: left;
+    }
+    .welcomepage-img > img{
+        margin-top: 2rem;
+        width: 600px;
+        height: 400px;
+    }
+    .welcome-title{
+        width: 65%;
+    }
+    .coverage-service{
+        display: flex;
+        gap: 2rem;
+    }
+    .coverageservice-text > h5 {
+        font-size: 20px;
+    }
+    .coverageservice-img > img{
+        width: 225px;
+        height: 175px;
+        margin-top: 2rem;
+
+    }
+    .coverageservice-textdetail{
+        line-height: 1.6;
+    }
+    .coverageservice-textdetail > h5{
+        text-align: left;
+    }
+    .coverageservice-textdetail > li{
+        text-align: left;
+        list-style-type: circle;
+        list-style-position: outside;
+
+     }
+     .waterphysico-detail{
+         text-align: justify;
+         margin-top: 1rem;
+         line-height: 1.6;
+     }
+     .relecvant{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 2rem;
+     }
+     .relevant-text {
+        margin-right: 6rem;
+     }
+     .relevan-text > h5{
+        text-align: justify;
+     }
+     .ulrelevant > li{
+        list-style-type: circle;
+        list-style-position: outside;
+        text-align: left;
+        
+     }
+     .relevant-img > img{
+        width: 225px;
+        height: 175px;
+        margin-top: 0rem;
+        margin-left: 5rem;
+     }
+     
+/* End of welcome page */
+ /* Quote Section */
+ .getaquotea{
+    background-color: #ffff;
+ }
+ .quote-title > h3{
+    font-size: 25px;
+    font-weight: 400;
+ }
+ .quote-title > p{
+    text-align: justify;
+    margin-top: 3rem;
+ }
+ .grid-quote{
+    display: flex;
+    gap: 4rem;
+ }
+.getquote-section{
+    font-family:"Roboto Slab", serif;
+    margin-top: 7rem; 
+}
+.ads-quote{
+    margin-top: 0rem;
+}
+.quote-form{
+    width: 65%;
+}
+.getquote-text >h1{
+    text-align: center;
+    font-size: 20px;
+}
+.form-container{
+    padding: 20px;
+    
+    border: 1px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.getqute-text{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.la-name{
+    display: block;
+    margin-bottom: 5px;
+}
+.in-text{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid  #afadad;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.inquiry{
+    height: 20px;
+}
+.btn-sub{
+    
+    padding: 5px 15px;
+    background:linear-gradient(200deg, #22a3d6,#39e5d4);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.btn-sub:hover{
+    background:#22a3d6;
+}
+#responseMessage,
+#alertMessage{
+    text-align:center;
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    margin-top: 20px;
+}
+.hidden{
+    display: none;
+}
+.error-message{
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+#responseMessage{
+    color: blud;
+}
+#alertMessage{
+    color: red;
+}
+/* End of Quote section */
+
+
+/* Event one section */
+.newyear-text{
+    width: 65%;
+}
+.event-one{
+    display: flex;
+    gap: 4rem;
+    margin-top: 7rem;
+    font-family:"Roboto Slab", serif;
+}
+.newyear-detial > h1{
+    font-size: 25px;
+    font-weight: 400;
+}
+.newyear-detial > h5{
+    font-size: 10px;
+}
+.newyear-detial > p{
+    margin-top: 2rem;
+    text-align: justify;
+}
+
+/* End of event one section */
+/* Event two section */
+.eventtwo-section{
+    font-family:"Roboto Slab", serif;
+}
+    .launch-text{
+        width: 65%;
+    }
+    .event-two {
+        display: flex;
+        gap: 4rem;
+        margin-top: 7rem;
+    }
+    .launch-detial{
+        text-align: justify ;
+        line-height: 1.6;
+
+    }
+    .launch-detial > h1{
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .launch-detial > h5{
+        font-size: 10px;
+    }
+    .launch-detial > p {
+        margin-top: 2rem;
+    }
+/* End of event two section */
+
+/* Event three section */
+.eventthree-section{
+    font-family: "Roboto Slab", serif; 
+}
+.Kinal-text{
+    width: 65%;
+}
+.event-three{
+    display: flex;
+    gap: 4rem;
+    margin-top: 7rem;
+}
+.kinal-detial{
+    text-align: justify;
+}
+.kinal-detial > h1{
+    font-size: 25px;
+    font-weight: 400;
+
+}
+.kinal-detial > h5{
+    font-size: 10px; 
+}
+.kinal-detial > p{
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+
+/* End of event three section */
+/* Group PPM */
+.group-section{
+    font-family: "Roboto Slab", serif; 
+    display: flex;
+    gap: 4rem;
+    margin-top: 7rem;
+}
+.ppm-section{
+    width: 65%;
+}
+.ppm-text{
+    line-height: 1.6;
+}
+.ppm-text > h1{
+    font-size: 25px;
+    font-weight: 400;
+}
+/* End of Group PPM */
+/* Article section */
+.block-row{
+    display: flex;
+    margin-top: 3rem;
+}
+.previous-side{
+    text-align: left;
+    width: 50%;
+}
+.next-side{
+    text-align: right;
+    width: 50%; 
+}
+.pre-art{
+    font-size: 15px;
+    color: #c1c1c1;
+    margin-bottom: 7px;
+}
+.previous-side > a{
+    display: block;
+    font-size: 15px;
+    color: #222;
+    line-height: 21px;
+    margin-bottom: 43px;
+   
+}
+.previous-side a:hover{
+    text-decoration: none;
+    color:#00b3ff;
+}
+.next-side > a {
+    display: block;
+    font-size: 15px;
+    color: #222;
+    line-height: 21px;
+    margin-bottom: 43px;
+   
+}
+.next-side a:hover{
+    text-decoration: none;
+    color: #00b3ff;
+}
+.next-art{
+    font-size: 15px;
+    color: #c1c1c1;
+    margin-bottom: 7px;
+
+}
+/* End of article section */
+/* Share button  */
+.button-container {
+    border-style: solid;
+    border-color: #ededed;
+    border-width: 1px 0;
+    padding: 21px 0;
+    margin-bottom: 42px;
+    margin-top: 3rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.share-button {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    text-decoration: none;
+}
+
+.share-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.facebook-button {
+    background-color: #190e7abd;
+    color: rgb(255, 255, 255);
+}
+.facebook-button > a {
+    color: #ededed;
+    text-decoration: none;
+    font-size: 12px;
+}
+.facebook-button a:hover{
+    color: #ffff;
+    text-decoration: none;
+  
+}
+.print-button {
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+}
+
+.fa-facebook-f,
+.fa-print {
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid #ffff;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+.share-link {
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+}
+.share-link,
+.share-face {
+    font-size: 12px;
+}
+/* End of Share Button */
+/* La-analysis section */
+    .labiocert-analysis{
+        margin-top: 7rem;
+    }
+    table td{
+        border: 1px solid #ededed; 
+        padding: 2px 8px;
+    }
+/* End of  La-analysis section */
+/* Food-Analysis */
+.f-text{
+    margin-top: 7rem;
+}
+/* End of Food-Analysis */
+/* Foot9er */
+.social{
+    font-family:"Roboto Slab", serif;
+    padding: 2rem 2rem;
+    color: #fffbfbc9;
+}
+.quote{
+    font-family:"Roboto Slab", serif;
+    margin-top: 1rem; 
+    padding: 2rem 2rem; 
+}
+footer{
+    background-color: #3491dd;
+}
+.social-network{
+    margin-top: 2rem;
+    margin-left: 0rem;
+}
+.open-hour-title,
+.contact-us{
+    font-size: 20px;
+    margin-top: 2rem;
+}
+.open-line{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #31c9ba;
+    width: 70px;
+    margin-top: 4px;
+    padding: 0; 
+    position: absolute;
+}
+.secound-open-line{
+    display: block;
+    border: 0;
+    border-top: 1px solid #f3f3f3ad;
+    width: 200px;
+    margin-top: 4px;
+    padding: 0; 
+    position: absolute;
+}
+.social-title > h4{
+    margin-top: 2rem;
+}
+.social-title > a{
+    padding-right: 20px;
+
+}
+.fab{
+    font-size: 37px; 
+}
+.contact-tell{
+    display: flex;
+}
+.contact-grid{
+    gap: 1rem; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+.contact-icon{
+    font-size: 37px; 
+}
+.mobile-icon, .email-icon, .location-icon{
+    margin-top: 2rem; 
+}
+.contact-text{
+    width: 100%;
+    height: 100%;
+    margin-right: 8rem; 
+    letter-spacing: 1.6;
+    text-align-last: left;  
+}
+.contact-tell{
+    margin-top: 2rem; 
+    
+}
+.email-text{
+    margin-top: 3.5rem; 
+}
+.location-text{
+    margin-top: 3rem
+}
+.open-hour-detail{
+    margin-top: 1rem;
+}
+.opean-hour-detail{
+    text-decoration: none;
+}
+.open-detail{
+    color: #ffff;
+}
+.open-detail:hover{
+    color:#e6e6e6;
+    cursor: pointer; 
+    text-decoration: none;
+}
+.open-detail::after{
+    font-size:20em; 
+    color:#ffff;
+}
+.sfab:hover{
+    color: rgb(2, 2, 2);
+    cursor: pointer; 
+}
+.sfab::after{
+    color:#01090e;
+}
+.social-icon{
+    margin-top: 2rem;
+    
+}
+.social-icon > a {
+   
+}
+.icon-in{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.icon-you{
+    margin-left: 1rem; 
+    margin-right: 1rem;
+}
+.fa-facebook-square,
+.fa-linkedin,
+.fa-x-twitter,
+.fa-square-youtube{
+    color: #ffffff;
+}
+.fa-facebook-square:hover,
+.fa-linkedin:hover,
+.fa-x-twitter:hover,
+.fa-square-youtube:hover{
+    color: #191818;
+}
+/*End Footer */
+
+/* Compyright */
+.copy{
+   
+}
+.copy-right > h4{
+   width: 100%;
+   height: 250%;
+}
+.title-copy-right{
+    font-family: "Roboto Slab", serif;
+    background-color:rgb(51, 51, 51);
+    font-size: 15px;
+    text-align: center;
+    color: #f8feff;
+    line-height: 50px;
+}
+/* End of Company right */
